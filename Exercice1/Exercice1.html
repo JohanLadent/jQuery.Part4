@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="jquery-3.3.1.min.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <h2>Place au shifumi !!!!</h2>
+  <p>
+    Player : <span class="left"> 0</span>
+    IA : <span class="right"> 0</span>
+  </p>
+  <form>
+    <select class="joueur" name="player" id="player">
+      <option value="1" id="pierre">Pierre</option>
+      <option value="2" id="feuille">Feuille</option>
+      <option value="3" id="ciseaux">Ciseaux</option>
+    </select>
+    <button type="button" name="shifumi" id="shifumi">Shifumi !</button>
+  </form>
+  <div id="result"><p></p></div>
+  <script>
+  $(function(){
+    var pierre = "#pierre";
+    pierre = 1;
+    var feuille = "#feuille";
+    feuille = 2;
+    var ciseaux = "#ciseaux";
+    ciseaux = 3;
+    $(function modeOrdi() {
+      $("#shifoumi").click(function(){
+        var reponseOrdi = Math.floor(Math.random()*3+1);
+        var reponseJoueur = $('#joueur option:selected').val();
+        if (reponseJoueur == reponseOrdi) {
+          alert("Egalité !");
+        }
+        else if ((reponseOrdi == 3 && reponseJoueur == 2) ||
+        (reponseOrdi == 2 && reponseJoueur == 1) ||
+        (reponseOrdi == 1 && reponseJoueur == 3)) {
+          alert("Tu as perdu !")
+        }
+        else {
+          alert("Tu as gagné !")
+        }
+      });
+    });
+  });
+
+          // switch (reponse) {
+          //   case "pierre":
+          //     reponse = 1
+          //     break;
+          //
+          //   case "feuille" :
+          //   reponse = 2
+          //   break;
+          //
+          //   case "ciseaux" :
+          //   reponse = 3
+          //   break;
+          //   default:
+          //
+          // }
+
+          //       if(reponseordi == reponse)
+          // 		{
+          // 			$("#resultat").html("Egalité !");
+          // 		}
+          //
+          // 		else if (
+          // 			(reponseordi == 4 && reponse == 1)
+          // 			(reponseordi == 4 && reponse == 3)
+          // 			(reponseordi == 3 && reponse == 2)
+          // 			(reponseordi == 2 && reponse == 4)
+          // 			(reponseordi == 2 && reponse == 1)
+          // 			(reponseordi == 1 && reponse == 3)
+          // 		)
+          // 		{
+          // 			scoreordi ++;
+          // 			$("#scoreordi").html(parseInt($("#scoreordi").html())+1);
+          // 			$("#resultat").html("Tu as perdu !");
+          // 		}
+          // 		else
+          // 		{
+          // 			scorejoueur ++;
+          // 			$("#scoreuser").html(parseInt($("#scoreuser").html())+1);
+          // $("#resultat").html("Tu as gagné !");
+          // }
+</script>
+</body>
+</html>

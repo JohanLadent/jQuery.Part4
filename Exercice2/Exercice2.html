@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="jquery-3.3.1.min.js"></script>
+  <title>Exercice 2</title>
+</head>
+<body>
+  <h2>Donne nous tes 5 dernières notes afin de calculer ta moyenne</h2>
+  <form class="moyenne" id ="moyenne" method="post">
+    <div>
+      <label>Note 1 : </label>
+      <input type="text" name="note1" id="note1">
+    </div>
+    <div>
+      <label>Note 2 : </label>
+      <input type="text" name="note2" id="note2">
+    </div>
+    <div>
+      <label>Note 3 : </label>
+      <input type="text" name="note3" id="note3">
+    </div>
+    <div>
+      <label>Note 4 : </label>
+      <input type="text" name="note4" id="note4">
+    </div>
+    <div>
+      <label>Note 5 : </label>
+      <input type="text" name="note5" id="note5">
+    </div>
+    <!-- <label for="notes">notes</label> -->
+  </form>
+  <p id='display'></p>
+  <button type="button" name="submit" id="submit">Envoyez</button>
+  <script>
+  $(function () {
+    var note1 = $("#note1").val();
+    var note2 = $("#note2").val();
+    var note3 = $("#note3").val();
+    var note4 = $("#note4").val();
+    var note5 = $("#note5").val();
+    var moyenne = note1 + note2;
+    console.log(moyenne)
+    $(function moy() {
+      $('#submit').click(function() {
+        if (moyenne >= 0 && moyenne < 10) {
+          alert("Vous avez " + moyenne + " de moyenne. Votre mention est donc : En dessous de la moyenne");
+        }
+        else if (moyenne >= 10 && moyenne < 13) {
+          alert("Vous avez " + moyenne + " de moyenne. Votre mention est donc : Moyen");
+        }
+        else if (moyenne >= 13 && moyenne < 16) {
+          alert("Vous avez " + moyenne + " de moyenne. Votre mention est donc : Bien");
+        }
+        else if (moyenne >= 16 && moyenne < 20) {
+          alert("Vous avez " + moyenne + " de moyenne. Votre mention est donc : Très bien");
+        }
+        else if (moyenne == 20) {
+          alert("Vous avez " + moyenne + " de moyenne. Votre mention est donc : Excellent");
+        }
+        else {
+          alert("Veuillez recommencer")
+        }
+    });
+    });
+  });
+</script>
+</body>
+</html>
